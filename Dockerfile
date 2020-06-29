@@ -45,6 +45,25 @@ RUN apt-get update \
     && apt-get purge -y && apt-get autoremove -y && apt-get autoclean -y \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip install --upgrade \
+    wheel \
+    eggs \
+    pip \
+    && pip install --upgrade \
+    docker \
+    jedi \
+    rope \
+    autopep8 \
+    yapf \
+    black \
+    flake8 \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+    emacs-nox \
+    && git clone https://github.com/oCh6Z/dot-emacs-python-docker.git $HOME/dot-emacs \
+    && ln -s $HOME/dot-emacs/.emacs $HOME/ \
+    && ln -s $HOME/dot-emacs/.emacs.d $HOME/
+
 ENTRYPOINT ["/bin/sh", "-c"]
 
 CMD ["bash"]
