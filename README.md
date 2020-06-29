@@ -21,5 +21,5 @@ docker run \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume /tmp/.X11-unix:/tmp/.X11-unix \
     --env DISPLAY=unix$DISPLAY \
-    --name container-name och6z/dockersdk
+    --name container-name och6z/dockersdk-python
 ```
