@@ -57,6 +57,7 @@ RUN pip install --upgrade \
     yapf \
     black \
     flake8 \
+    ipython \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
     emacs-nox \
