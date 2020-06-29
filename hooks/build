@@ -1,0 +1,11 @@
+#!/bin/bash
+
+docker build \
+    --no-cache \
+    --build-arg IMAGE=python \
+    --build-arg IMAGE_VERSION=slim \
+    --build-arg ACCOUNT=docker \
+    --build-arg USERMAIL=usermail@usermail \
+    --build-arg USER=user@user \
+    --file $DOCKERFILE_PATH \
+    --tag $IMAGE_NAME .
