@@ -69,6 +69,6 @@ RUN pip install --upgrade \
 
 ENV TERM xterm-256color
 
-ENTRYPOINT ["/bin/sh", "-c"]
+ENTRYPOINT ["/bin/bash", "-c"]
 
 CMD ["bash"]
