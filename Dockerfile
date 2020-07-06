@@ -57,13 +57,17 @@ RUN pip install --upgrade \
     yapf \
     black \
     flake8 \
+    isort \
     ipython \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
     emacs-nox \
     && git clone https://github.com/oCh6Z/dot-emacs-python-docker.git $HOME/dot-emacs \
     && ln -s $HOME/dot-emacs/.emacs $HOME/ \
-    && ln -s $HOME/dot-emacs/.emacs.d $HOME/
+    && ln -s $HOME/dot-emacs/.emacs.d $HOME/ \
+    && ln -s $HOME/dot-emacs/.isort.cfg $HOME/
+
+ENV TERM xterm-256color
 
 ENTRYPOINT ["/bin/sh", "-c"]
 
